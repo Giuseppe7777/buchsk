@@ -12,37 +12,29 @@
   <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-md-0">
     <div class="btn-group lang-switcher me-2" role="group">
 
-      <button 
-        type="button" 
-        class="btn btn-outline-primary btn-sm"
-        [class.active]="isActive('sk')"
-        (click)="setLang('sk')">
-        {{ 'lang.sk' | translate }}
-      </button>
+      <div class="dropdown">
+        <button 
+          class="btn btn-outline-primary btn-sm dropdown-toggle" 
+          type="button" 
+          id="langDropdown" 
+          data-bs-toggle="dropdown" 
+          aria-expanded="false">
+          {{ currentLanguage.toUpperCase() }}
+        </button>
 
-      <button 
-        type="button" 
-        class="btn btn-outline-primary btn-sm"
-        [class.active]="isActive('ua')"
-        (click)="setLang('ua')">
-        {{ 'lang.ua' | translate }}
-      </button>
-
-      <button 
-        type="button" 
-        class="btn btn-outline-primary btn-sm"
-        [class.active]="isActive('de')"
-        (click)="setLang('de')">
-        {{ 'lang.de' | translate }}
-      </button>
-
-      <button 
-        type="button" 
-        class="btn btn-outline-primary btn-sm"
-        [class.active]="isActive('en')"
-        (click)="setLang('en')">
-        {{ 'lang.en' | translate }}
-      </button>
+        <ul class="dropdown-menu dropdown-langs" aria-labelledby="langDropdown">
+          @for (lang of langs; track lang) {
+            <li>
+              <button 
+                class="dropdown-item" 
+                [class.active]="isActive(lang)"
+                [routerLink]="['/', lang]">
+                {{ lang.toUpperCase() }}
+              </button>
+            </li>
+          }
+        </ul>
+      </div>
       
     </div>
     <button class="btn btn-success btn-sm">{{ 'actions.register' | translate }}</button>
@@ -73,12 +65,14 @@
   <section class="text-center mb-5 px-md-5">
     <h2 class="h4 fw-semibold mb-4">{{ 'features.title' | translate }}</h2>
     <div class="row justify-content-center g-3">
-      <div class="col-md-4" *ngFor="let key of ['f1','f2','f3','f4','f5']">
+      @for (key of ['f1','f2','f3','f4','f5']; track key) {
+        <div class="col-md-4">
         <div class="feature-box p-3 border rounded shadow-sm h-100">
           <div class="text-success fs-4 mb-2">✔</div>
           <p class="m-0">{{ ('features.' + key) | translate }}</p>
         </div>
       </div>
+      }      
     </div>
   </section>
 

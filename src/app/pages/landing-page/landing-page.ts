@@ -1,21 +1,26 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslationService } from '../../services/translation.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslatePipe],
+  imports: [RouterLink, TranslatePipe, CommonModule],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
 })
 export class LandingPage {
   private i18n = inject(TranslationService);
 
-  // показуємо рівно ті мови, що в тебе є (sk/en)
-  langs = ['sk', 'en', 'ua', 'de'];
+  get currentLanguage(): string {
+    return this.i18n.currentLanguage;
+  }
+
+  get langs(): string[] {
+    return this.i18n.availableLanguages;
+  }
 
   setLang(lang: string) {
     this.i18n.setLanguage(lang);
@@ -24,4 +29,5 @@ export class LandingPage {
   isActive(lang: string): boolean {
     return this.i18n.currentLanguage === lang;
   }
+
 }

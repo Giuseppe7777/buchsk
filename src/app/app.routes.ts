@@ -3,7 +3,10 @@ import { LandingPage } from './pages/landing-page/landing-page';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: LandingPage
+    path: ':lang',
+    children: [
+      { path: '', component: LandingPage }
+      // якщо будуть інші сторінки — додаємо їх тут
+    ]
   }
 ];

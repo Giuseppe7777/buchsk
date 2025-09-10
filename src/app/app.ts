@@ -1,5 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LanguageRouteService } from './services/language-route.service';
+import { StartupRedirectService } from './services/startup-redirect.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +11,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('frontend');
+
+  private _langRoute = inject(LanguageRouteService);
+  private _startupRedirect = inject(StartupRedirectService);
 }

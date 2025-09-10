@@ -12,7 +12,7 @@ export class TranslationService {
     const savedLang = localStorage.getItem(this.storageKey);
     const defaultLang = savedLang || 'sk';
 
-    this.translate.addLangs(['en', 'sk']);
+    this.translate.addLangs(['en', 'sk', 'uk', 'de']);
     this.translate.setFallbackLang('en');
     this.translate.use(defaultLang);
   }
@@ -24,6 +24,10 @@ export class TranslationService {
 
   get currentLanguage(): string {
     return this.translate.getCurrentLang() || 'sk';
+  }
+
+  get availableLanguages(): string[] {
+    return [...this.translate.getLangs()];
   }
 }
 
