@@ -1,0 +1,34 @@
+body {
+  background: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.feature-box {
+  transition: transform 0.2s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+}
+
+.lang-switcher .btn {
+  min-width: 50px;
+}
+
+footer {
+  margin-top: 50px;
+  color: #6c757d;
+}
+
+.service-card {
+  max-width: 900px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.lang-switcher .btn.active {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+

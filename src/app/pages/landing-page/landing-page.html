@@ -1,0 +1,90 @@
+<div class="container py-5">
+
+  <!-- TOP: Logo + Badge + Language Switch -->
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+  <!-- Logo + Badge -->
+  <div class="d-flex align-items-center gap-3">
+    <h4 class="fw-bold text-primary m-0">{{ 'app.brand' | translate }}</h4>
+    <span class="badge rounded-pill bg-success">{{ 'app.badge' | translate }}</span>
+  </div>
+
+  <!-- Language Switcher + Auth Buttons -->
+  <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-md-0">
+    <div class="btn-group lang-switcher me-2" role="group">
+
+      <button 
+        type="button" 
+        class="btn btn-outline-primary btn-sm"
+        [class.active]="isActive('sk')"
+        (click)="setLang('sk')">
+        {{ 'lang.sk' | translate }}
+      </button>
+
+      <button 
+        type="button" 
+        class="btn btn-outline-primary btn-sm"
+        [class.active]="isActive('ua')"
+        (click)="setLang('ua')">
+        {{ 'lang.ua' | translate }}
+      </button>
+
+      <button 
+        type="button" 
+        class="btn btn-outline-primary btn-sm"
+        [class.active]="isActive('de')"
+        (click)="setLang('de')">
+        {{ 'lang.de' | translate }}
+      </button>
+
+      <button 
+        type="button" 
+        class="btn btn-outline-primary btn-sm"
+        [class.active]="isActive('en')"
+        (click)="setLang('en')">
+        {{ 'lang.en' | translate }}
+      </button>
+      
+    </div>
+    <button class="btn btn-success btn-sm">{{ 'actions.register' | translate }}</button>
+    <button class="btn btn-outline-secondary btn-sm">{{ 'actions.login' | translate }}</button>
+  </div>
+</div>
+
+  <!-- HERO SECTION -->
+  <section class="text-center mb-5">
+    <h1 class="display-5 fw-bold">{{ 'hero.title' | translate }}</h1>
+    <p class="lead text-muted">
+      {{ 'hero.subtitle' | translate }}
+    </p>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="service-card shadow-sm bg-white rounded p-4 p-md-5 mb-5 mx-auto text-center">
+    <h2 class="h4 fw-bold mb-4">{{ 'about.title' | translate }}</h2>
+
+    <p class="mb-3">{{ 'about.p1' | translate }}</p>
+    <p class="mb-3">{{ 'about.p2' | translate }}</p>
+    <p class="mb-3">{{ 'about.p3' | translate }}</p>
+    <p class="mb-0">{{ 'about.p4' | translate }}</p>
+  </section>
+
+
+  <!-- FEATURES SECTION -->
+  <section class="text-center mb-5 px-md-5">
+    <h2 class="h4 fw-semibold mb-4">{{ 'features.title' | translate }}</h2>
+    <div class="row justify-content-center g-3">
+      <div class="col-md-4" *ngFor="let key of ['f1','f2','f3','f4','f5']">
+        <div class="feature-box p-3 border rounded shadow-sm h-100">
+          <div class="text-success fs-4 mb-2">✔</div>
+          <p class="m-0">{{ ('features.' + key) | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-muted small">
+    <div>🔒 {{ 'footer.secure' | translate }}</div>
+    <div class="mt-1">© 2025 {{ 'footer.rights' | translate }}</div>
+  </footer>
+</div>

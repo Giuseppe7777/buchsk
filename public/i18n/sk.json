@@ -1,0 +1,39 @@
+{
+  "app": {
+    "brand": "Váš Virtuálny Účtovník",
+    "badge": "Jednoduché ako 1–2–3"
+  },
+  "lang": {
+    "sk": "SK",
+    "en": "EN",
+    "ua": "UA",
+    "de": "DE"
+  },
+  "actions": {
+    "register": "Registrácia",
+    "login": "Prihlásenie"
+  },
+  "hero": {
+    "title": "Účtovníctvo pre každého podnikateľa",
+    "subtitle": "Rýchlo. Online. Bez starostí."
+  },
+  "about": {
+    "title": "O našej službe",
+    "p1": "Zabudnite na zložité tabuľky a nekonečné papiere.",
+    "p2": "S naším online systémom spravujete účtovníctvo jednoducho.",
+    "p3": "Všetko máte na jednom mieste, dostupné 24/7.",
+    "p4": "Vaše dáta sú u nás v bezpečí."
+  },
+  "features": {
+    "title": "Prečo si vybrať nás?",
+    "f1": "Jednoduché a intuitívne rozhranie",
+    "f2": "Automatizované daňové výpočty",
+    "f3": "Bezpečné uloženie dát",
+    "f4": "Rýchla podpora",
+    "f5": "Prispôsobené pre Slovensko a Česko"
+  },
+  "footer": {
+    "secure": "Vaše údaje sú zabezpečené",
+    "rights": "Všetky práva vyhradené"
+  }
+}

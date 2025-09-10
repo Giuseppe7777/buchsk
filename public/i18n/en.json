@@ -1,0 +1,39 @@
+{
+  "app": {
+    "brand": "Your Virtual Accountant",
+    "badge": "As easy as 1–2–3"
+  },
+  "lang": {
+    "sk": "SK",
+    "en": "EN",
+    "ua": "UA",
+    "de": "DE"
+  },
+  "actions": {
+    "register": "Register",
+    "login": "Log in"
+  },
+  "hero": {
+    "title": "Accounting for every entrepreneur",
+    "subtitle": "Fast. Online. Hassle-free."
+  },
+  "about": {
+    "title": "About our service",
+    "p1": "Forget about complex spreadsheets and endless paperwork.",
+    "p2": "With our online system, accounting is simple.",
+    "p3": "Everything in one place, available 24/7.",
+    "p4": "Your data is safe with us."
+  },
+  "features": {
+    "title": "Why choose us?",
+    "f1": "Simple and intuitive interface",
+    "f2": "Automated tax calculations",
+    "f3": "Secure data storage",
+    "f4": "Fast support",
+    "f5": "Tailored for Slovakia and Czechia"
+  },
+  "footer": {
+    "secure": "Your data is secure",
+    "rights": "All rights reserved"
+  }
+}

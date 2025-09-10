@@ -1,0 +1,39 @@
+{
+  "app": {
+    "brand": "Ihr Virtueller Buchhalter",
+    "badge": "So einfach wie 1–2–3"
+  },
+  "lang": {
+    "sk": "SK",
+    "en": "EN",
+    "ua": "UA",
+    "de": "DE"
+  },
+  "actions": {
+    "register": "Registrieren",
+    "login": "Anmelden"
+  },
+  "hero": {
+    "title": "Buchhaltung für jeden Unternehmer",
+    "subtitle": "Schnell. Online. Sorgenfrei."
+  },
+  "about": {
+    "title": "Über unseren Service",
+    "p1": "Vergessen Sie komplizierte Tabellen und endlosen Papierkram.",
+    "p2": "Mit unserem Online-System ist Buchhaltung einfach.",
+    "p3": "Alles an einem Ort, 24/7 verfügbar.",
+    "p4": "Ihre Daten sind bei uns sicher."
+  },
+  "features": {
+    "title": "Warum uns wählen?",
+    "f1": "Einfache und intuitive Benutzeroberfläche",
+    "f2": "Automatisierte Steuerberechnung",
+    "f3": "Sichere Datenspeicherung",
+    "f4": "Schneller Support",
+    "f5": "Angepasst für die Slowakei und Tschechien"
+  },
+  "footer": {
+    "secure": "Ihre Daten sind geschützt",
+    "rights": "Alle Rechte vorbehalten"
+  }
+}
