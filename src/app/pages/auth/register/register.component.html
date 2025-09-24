@@ -1,0 +1,112 @@
+<div class="container mt-5">
+
+  <!-- ======= СТАН 1: Форма реєстрації ======= -->
+  @if (step === 'form') {
+    <div class="border p-4 rounded shadow-sm bg-white">
+      <h2 class="mb-4 text-center">Реєстрація</h2>
+
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">Ім’я</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            [(ngModel)]="user.firstName"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Прізвище</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            [(ngModel)]="user.lastName"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Телефон</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            [(ngModel)]="user.phone"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Пароль</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">
+          Зареєструватися
+        </button>
+      </form>
+    </div>
+  }
+
+  <!-- ======= СТАН 2: Модалка OTP ======= -->
+  @if (step === 'otp') {
+    <div class="modal d-block" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow">
+          <div class="modal-header">
+            <h5 class="modal-title">Підтвердження реєстрації</h5>
+            <button type="button" class="btn-close" (click)="onCancelOtp()"></button>
+          </div>
+          <div class="modal-body">
+            <p>Для підтвердження реєстрації введіть код, який надійде на ваш телефон.</p>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="enteredCode"
+              placeholder="Введіть код"
+            />
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="onCancelOtp()">Скасувати</button>
+            <button class="btn btn-primary" (click)="onVerifyOtp()">Підтвердити</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- ======= TOAST-повідомлення ======= -->
+  @if (showToast) {
+    <div
+      class="toast align-items-center text-bg-primary border-0 show position-fixed bottom-0 end-0 m-3"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="d-flex">
+        <div class="toast-body">
+          {{ toastMessage }}
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          (click)="showToast = false"
+        ></button>
+      </div>
+    </div>
+  }
+</div>

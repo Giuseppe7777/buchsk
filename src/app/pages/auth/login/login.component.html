@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="border p-4 rounded shadow-sm bg-white">
+    <h2 class="mb-4 text-center">Вхід</h2>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="phone" class="form-label">Телефон</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          [(ngModel)]="user.phone"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Пароль</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="user.password"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">
+        Увійти
+      </button>
+    </form>
+  </div>
+</div>
+

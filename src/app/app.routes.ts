@@ -1,12 +1,18 @@
 import { Routes } from '@angular/router';
 import { LandingPage } from './pages/landing-page/landing-page';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
     path: ':lang',
     children: [
-      { path: '', component: LandingPage }
-      // якщо будуть інші сторінки — додаємо їх тут
+      { path: '', component: LandingPage },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('./pages/auth/auth.routes').then((m) => m.AUTH_ROUTES)
+      },
+      { path: 'dashboard', component: DashboardComponent }
     ]
   }
 ];

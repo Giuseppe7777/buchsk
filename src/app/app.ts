@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LanguageRouteService } from './services/language-route.service';
-import { StartupRedirectService } from './services/startup-redirect.service';
+import { LanguageRouteService } from './core/services/language-route.service';
+import { StartupRedirectService } from './core/services/startup-redirect.service';
 
 @Component({
   selector: 'app-root',

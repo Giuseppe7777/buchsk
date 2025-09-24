@@ -5,7 +5,7 @@ import { ApplicationConfig,
         inject } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { ConfigService } from './services/config.service';
+import { ConfigService } from './core/services/config.service';
 import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateService, provideTranslateLoader } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';

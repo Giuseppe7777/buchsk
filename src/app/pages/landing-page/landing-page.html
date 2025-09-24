@@ -37,7 +37,11 @@
       </div>
       
     </div>
-    <button class="btn btn-success btn-sm">{{ 'actions.register' | translate }}</button>
+    <button 
+      class="btn btn-success btn-sm"
+      [routerLink]="['/', currentLanguage, 'auth', 'register']">
+      {{ 'actions.register' | translate }}
+    </button>
     <button class="btn btn-outline-secondary btn-sm">{{ 'actions.login' | translate }}</button>
   </div>
 </div>

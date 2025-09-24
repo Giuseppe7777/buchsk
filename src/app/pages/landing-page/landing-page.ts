@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
-import { TranslationService } from '../../services/translation.service';
+import { TranslationService } from '../../core/services/translation.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
