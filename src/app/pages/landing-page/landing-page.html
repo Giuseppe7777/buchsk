@@ -1,50 +1,6 @@
 <div class="container py-5">
 
   <!-- TOP: Logo + Badge + Language Switch -->
-<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-  <!-- Logo + Badge -->
-  <div class="d-flex align-items-center gap-3">
-    <h4 class="fw-bold text-primary m-0">{{ 'app.brand' | translate }}</h4>
-    <span class="badge rounded-pill bg-success">{{ 'app.badge' | translate }}</span>
-  </div>
-
-  <!-- Language Switcher + Auth Buttons -->
-  <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-md-0">
-    <div class="btn-group lang-switcher me-2" role="group">
-
-      <div class="dropdown">
-        <button 
-          class="btn btn-outline-primary btn-sm dropdown-toggle" 
-          type="button" 
-          id="langDropdown" 
-          data-bs-toggle="dropdown" 
-          aria-expanded="false">
-          {{ currentLanguage.toUpperCase() }}
-        </button>
-
-        <ul class="dropdown-menu dropdown-langs" aria-labelledby="langDropdown">
-          @for (lang of langs; track lang) {
-            <li>
-              <button 
-                class="dropdown-item" 
-                [class.active]="isActive(lang)"
-                [routerLink]="['/', lang]">
-                {{ lang.toUpperCase() }}
-              </button>
-            </li>
-          }
-        </ul>
-      </div>
-      
-    </div>
-    <button 
-      class="btn btn-success btn-sm"
-      [routerLink]="['/', currentLanguage, 'auth', 'register']">
-      {{ 'actions.register' | translate }}
-    </button>
-    <button class="btn btn-outline-secondary btn-sm">{{ 'actions.login' | translate }}</button>
-  </div>
-</div>
 
   <!-- HERO SECTION -->
   <section class="text-center mb-5">

@@ -2,16 +2,17 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
-import { TranslationService } from '../../../core/services/translation.service'
-
+import { TranslationService } from '../../../core/services/translation.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-register',
-  imports: [FormsModule],
+  imports: [FormsModule, TranslatePipe],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class Register {
   private i18n = inject(TranslationService);
+  private translate = inject(TranslateService);
 
   step: 'form' | 'otp' = 'form';
 
@@ -36,7 +37,7 @@ export class Register {
       },
       error: (err) => {
         console.error(err);
-        this.showToastMessage('Помилка реєстрації: ' + err.message);
+        this.showToastMessage(this.translate.instant('register.error'));
       }
     });
   }
@@ -44,12 +45,12 @@ export class Register {
   onVerifyOtp() {
     this.auth.verifyOtp({ phone: this.user.phone, code: this.enteredCode }).subscribe({
       next: () => {
-        this.showToastMessage('Ваш номер підтверджено! Ваш акаунт створено.');
+        this.showToastMessage(this.translate.instant('register.success'));
         setTimeout(() => this.router.navigate([`${this.i18n.currentLanguage}/auth/login`]), 1500);
       },
       error: (err) => {
         console.error(err);
-        this.showToastMessage('Невірний код підтвердження!');
+        this.showToastMessage(this.translate.instant('register.invalidCode'));
       }
     });
   }

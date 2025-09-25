@@ -35,5 +35,28 @@
   "footer": {
     "secure": "Vaše údaje sú zabezpečené",
     "rights": "Všetky práva vyhradené"
+  },
+  "register": {
+    "title": "Registrácia",
+    "firstName": "Meno",
+    "lastName": "Priezvisko",
+    "phone": "Telefón",
+    "password": "Heslo",
+    "submit": "Zaregistrovať sa",
+    "otpTitle": "Potvrdenie registrácie",
+    "otpInstruction": "Na potvrdenie registrácie zadajte kód, ktorý vám bol zaslaný na telefón.",
+    "otpPlaceholder": "Zadajte kód",
+    "cancel": "Zrušiť",
+    "confirm": "Potvrdiť",
+    "error": "Chyba pri registrácii",
+    "success": "Vaše číslo bolo potvrdené! Váš účet bol vytvorený.",
+    "invalidCode": "Nesprávny potvrdzovací kód!"
+  },
+  "login": {
+    "title": "Prihlásenie",
+    "phone": "Telefón",
+    "password": "Heslo",
+    "submit": "Prihlásiť sa",
+    "error": "Nesprávny telefón alebo heslo!"
   }
 }

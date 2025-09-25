@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
+import { TranslationService } from '../../../core/services/translation.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, TranslatePipe],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  private i18n = inject(TranslationService);
+  private translate = inject(TranslateService);
+
   user = {
     phone: '',
     password: ''
@@ -21,13 +26,11 @@ export class LoginComponent {
   onSubmit() {
     this.auth.login(this.user).subscribe({
       next: (res) => {
-        console.log('JWT токен:', res.token);
-        // TODO: зберегти токен у localStorage або service
-        this.router.navigate(['uk/dashboard']); // 👈 після логіну в кабінет
+        // TODO: зберегти токен (localStorage/service)
+        this.router.navigate([`${this.i18n.currentLanguage}/dashboard`]);
       },
-      error: (err) => {
-        console.error('Помилка логіну', err);
-        alert('Невірний телефон або пароль!');
+      error: () => {
+        alert(this.translate.instant('login.error'));
       }
     });
   }

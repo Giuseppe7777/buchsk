@@ -35,5 +35,28 @@
   "footer": {
     "secure": "Your data is secure",
     "rights": "All rights reserved"
+  },
+  "register": {
+    "title": "Register",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone",
+    "password": "Password",
+    "submit": "Sign up",
+    "otpTitle": "Registration confirmation",
+    "otpInstruction": "To confirm your registration, please enter the code sent to your phone.",
+    "otpPlaceholder": "Enter code",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "error": "Registration error",
+    "success": "Your number has been verified! Your account has been created.",
+    "invalidCode": "Invalid confirmation code!"
+  },
+  "login": {
+    "title": "Log in",
+    "phone": "Phone",
+    "password": "Password",
+    "submit": "Log in",
+    "error": "Invalid phone or password!"
   }
 }

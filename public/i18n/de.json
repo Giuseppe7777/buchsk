@@ -35,5 +35,28 @@
   "footer": {
     "secure": "Ihre Daten sind geschützt",
     "rights": "Alle Rechte vorbehalten"
+  },
+  "register": {
+    "title": "Registrierung",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "phone": "Telefon",
+    "password": "Passwort",
+    "submit": "Registrieren",
+    "otpTitle": "Registrierungsbestätigung",
+    "otpInstruction": "Zur Bestätigung der Registrierung geben Sie bitte den Code ein, der an Ihr Telefon gesendet wurde.",
+    "otpPlaceholder": "Code eingeben",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "error": "Fehler bei der Registrierung",
+    "success": "Ihre Nummer wurde bestätigt! Ihr Konto wurde erstellt.",
+    "invalidCode": "Ungültiger Bestätigungscode!"
+  },
+  "login": {
+    "title": "Anmelden",
+    "phone": "Telefon",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "error": "Ungültige Telefonnummer oder Passwort!"
   }
 }
