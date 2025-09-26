@@ -58,6 +58,19 @@
     "password": "Пароль",
     "submit": "Увійти",
     "error": "Невірний телефон або пароль!"
+  },
+  "navbar": {
+    "logout": "Вийти",
+    "dashboard": "Мій кабінет"
+  },
+  "dashboard": {
+    "welcome": "Раді вітати тебе, {{firstName}} {{lastName}}, у твоєму кабінеті!",
+    "userData": "Твої дані",
+    "phone": "Телефон",
+    "status": "Статус",
+    "verified": "Верифікований",
+    "yes": "Так",
+    "no": "Ні",
+    "roles": "Ролі"
   }
-
 }

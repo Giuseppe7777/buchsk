@@ -1,7 +1,23 @@
 <div class="container mt-5">
   <div class="text-center p-5 bg-light rounded shadow">
-    <h1 class="fw-bold text-success">
-      Раді вітати тебе, {{ firstName }} {{ lastName }}, у твоєму кабінеті!
-    </h1>
+    <h2 class="fw-bold text-success">
+      {{ 'dashboard.welcome' | translate:{ firstName: firstName, lastName: lastName } }}
+    </h2>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-4 offset-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          {{ 'dashboard.userData' | translate }}
+        </div>
+        <div class="card-body">
+          <p><strong>{{ 'dashboard.phone' | translate }}:</strong> {{ phone }}</p>
+          <p><strong>{{ 'dashboard.status' | translate }}:</strong> {{ status }}</p>
+          <p><strong>{{ 'dashboard.verified' | translate }}:</strong> {{ isVerified ? ('dashboard.yes' | translate) : ('dashboard.no' | translate) }}</p>
+          <p><strong>{{ 'dashboard.roles' | translate }}:</strong> {{ roles.join(', ') }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

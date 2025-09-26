@@ -58,5 +58,19 @@
     "password": "Password",
     "submit": "Log in",
     "error": "Invalid phone or password!"
+  },
+  "navbar": {
+    "logout": "Logout",
+    "dashboard": "My Dashboard"
+  },
+  "dashboard": {
+    "welcome": "Welcome, {{firstName}} {{lastName}}, to your dashboard!",
+    "userData": "Your Data",
+    "phone": "Phone",
+    "status": "Status",
+    "verified": "Verified",
+    "yes": "Yes",
+    "no": "No",
+    "roles": "Roles"
   }
 }

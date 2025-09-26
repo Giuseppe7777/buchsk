@@ -1,0 +1,1623 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.editorconfig
+.gitignore
+.nvmrc
+angular.json
+package.json
+proxy.conf.json
+public/config.json
+public/i18n/de.json
+public/i18n/en.json
+public/i18n/sk.json
+public/i18n/uk.json
+README.md
+src/app/app.config.ts
+src/app/app.html
+src/app/app.routes.ts
+src/app/app.spec.ts
+src/app/app.ts
+src/app/core/services/api.service.ts
+src/app/core/services/auth.service.ts
+src/app/core/services/config.service.ts
+src/app/core/services/language-route.service.ts
+src/app/core/services/startup-redirect.service.ts
+src/app/core/services/translation.service.ts
+src/app/pages/auth/auth.routes.ts
+src/app/pages/auth/login/login.component.html
+src/app/pages/auth/login/login.component.ts
+src/app/pages/auth/register/register.component.html
+src/app/pages/auth/register/register.component.ts
+src/app/pages/dashboard/dashboard.component.html
+src/app/pages/dashboard/dashboard.component.ts
+src/app/pages/landing-page/landing-page.css
+src/app/pages/landing-page/landing-page.html
+src/app/pages/landing-page/landing-page.ts
+src/app/shared/components/footer/footer.component.html
+src/app/shared/components/footer/footer.component.ts
+src/app/shared/components/navbar/navbar.component.html
+src/app/shared/components/navbar/navbar.component.ts
+src/index.html
+src/main.ts
+src/styles.css
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".editorconfig">
+# Editor configuration, see https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.ts]
+quote_type = single
+ij_typescript_use_double_quotes = false
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+</file>
+
+<file path=".gitignore">
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+</file>
+
+<file path=".nvmrc">
+22.19.0
+</file>
+
+<file path="README.md">
+# Frontend
+
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+
+## Development server
+
+To start a local development server, run:
+
+```bash
+ng serve
+```
+
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Code scaffolding
+
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+</file>
+
+<file path="src/app/app.spec.ts">
+import { TestBed } from '@angular/core/testing';
+import { App } from './app';
+
+describe('App', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [App],
+    }).compileComponents();
+  });
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(App);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, frontend');
+  });
+});
+</file>
+
+<file path="src/app/core/services/api.service.ts">
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ConfigService } from './config.service';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+  private http = inject(HttpClient);
+  private config = inject(ConfigService);
+
+  private url(path: string) {
+    return `${this.config.apiUrl}${path}`;
+  }
+
+  // GET
+  get<T>(path: string): Observable<T> {
+    return this.http.get<T>(this.url(path));
+  }
+
+  // POST
+  post<T>(path: string, body: any): Observable<T> {
+    return this.http.post<T>(this.url(path), body);
+  }
+
+  // PUT
+  put<T>(path: string, body: any): Observable<T> {
+    return this.http.put<T>(this.url(path), body);
+  }
+
+  // DELETE
+  delete<T>(path: string): Observable<T> {
+    return this.http.delete<T>(this.url(path));
+  }
+}
+</file>
+
+<file path="src/app/core/services/auth.service.ts">
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ApiService } from './api.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private base = '/auth';
+
+  constructor(private api: ApiService) {}
+
+  // Реєстрація
+  register(user: { phone: string; password: string; firstName: string; lastName: string }): Observable<any> {
+    return this.api.post(`${this.base}/register`, user);
+  }
+
+  // Відправка OTP
+  sendOtp(phone: string): Observable<any> {
+    return this.api.post(`${this.base}/send-otp`, { phone });
+  }
+
+  // Перевірка OTP
+  verifyOtp(data: { phone: string; code: string }): Observable<any> {
+    return this.api.post(`${this.base}/verify-otp`, data);
+  }
+
+  // Логін
+  login(data: { phone: string; password: string }): Observable<any> {
+    return this.api.post(`${this.base}/login`, data);
+  }
+}
+</file>
+
+<file path="src/app/core/services/config.service.ts">
+import { Injectable } from '@angular/core';
+
+export interface AppConfig {
+  API: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ConfigService {
+  private config: AppConfig | null = null;
+
+  loadConfig(): Promise<void> {
+    return fetch('/config.json')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Could not load config.json (status ${res.status})`);
+        }
+        return res.json();
+      })
+      .then((config: AppConfig) => {
+        this.config = config;
+      });
+  }
+
+  get apiUrl(): string {
+    if (!this.config) {
+      throw new Error('Config not loaded!');
+    }
+    return this.config.API;
+  }
+}
+</file>
+
+<file path="src/app/core/services/language-route.service.ts">
+import { Injectable } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { TranslationService } from './translation.service';
+
+@Injectable({ providedIn: 'root' })
+export class LanguageRouteService {
+  constructor(private router: Router, private i18n: TranslationService) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const lang = this.router.url.split('/')[1];
+        if (this.i18n.availableLanguages.includes(lang)) {
+          this.i18n.setLanguage(lang);
+        }
+      });
+  }
+}
+</file>
+
+<file path="src/app/core/services/startup-redirect.service.ts">
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Injectable({ providedIn: 'root' })
+export class StartupRedirectService {
+  private supportedLangs = ['sk', 'uk', 'de', 'en'];
+
+  constructor(private router: Router) {
+    const currentUrl = this.router.url;
+    const isRoot = currentUrl === '/' || currentUrl === '';
+
+    if (isRoot) {
+      const browserLang = navigator.language.slice(0, 2); 
+      const lang = this.supportedLangs.includes(browserLang) ? browserLang : 'sk';
+      void this.router.navigate([`/${lang}`]);
+    }
+  }
+  
+}
+</file>
+
+<file path="src/app/core/services/translation.service.ts">
+import { Injectable, inject } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TranslationService {
+  private translate = inject(TranslateService);
+  private readonly storageKey = 'app_language';
+
+  constructor() {
+    const savedLang = localStorage.getItem(this.storageKey);
+    const defaultLang = savedLang || 'sk';
+
+    this.translate.addLangs(['en', 'sk', 'uk', 'de']);
+    this.translate.setFallbackLang('en');
+    this.translate.use(defaultLang);
+  }
+
+  setLanguage(lang: string): void {
+    this.translate.use(lang);
+    localStorage.setItem(this.storageKey, lang);
+  }
+
+  get currentLanguage(): string {
+    return this.translate.getCurrentLang() || 'sk';
+  }
+
+  get availableLanguages(): string[] {
+    return [...this.translate.getLangs()];
+  }
+}
+</file>
+
+<file path="src/app/pages/auth/auth.routes.ts">
+import { Routes } from '@angular/router';
+import { Register } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+
+export const AUTH_ROUTES: Routes = [
+  { path: 'register', component: Register },
+  { path: 'login', component: LoginComponent }
+];
+</file>
+
+<file path="src/app/pages/dashboard/dashboard.component.html">
+<div class="container mt-5">
+  <div class="text-center p-5 bg-light rounded shadow">
+    <h1 class="fw-bold text-success">
+      Раді вітати тебе, {{ firstName }} {{ lastName }}, у твоєму кабінеті!
+    </h1>
+  </div>
+</div>
+</file>
+
+<file path="src/app/pages/dashboard/dashboard.component.ts">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-dashboard',
+  standalone: true,
+  imports: [],
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.css'
+})
+export class DashboardComponent {
+  firstName = 'Yosyp';   // TODO: пізніше підтягнемо з бекенду
+  lastName = 'Malanka';
+}
+</file>
+
+<file path="src/app/shared/components/footer/footer.component.html">
+<p>footer works!</p>
+</file>
+
+<file path="src/app/shared/components/footer/footer.component.ts">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-footer',
+  imports: [],
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.css'
+})
+export class Footer {
+
+}
+</file>
+
+<file path="src/app/shared/components/navbar/navbar.component.html">
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <!-- Logo + Badge -->
+    <div class="d-flex align-items-center gap-3">
+      <h4>
+        <a
+          class="text-decoration-none fw-bold text-primary m-0"
+          [routerLink]="['/', currentLanguage]">
+          {{ 'app.brand' | translate }}
+        </a>
+      </h4>
+      <span class="badge rounded-pill bg-success">{{ 'app.badge' | translate }}</span>
+    </div>
+  
+    <!-- Language Switcher + Auth Buttons -->
+    <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-md-0">
+      <div class="btn-group lang-switcher me-2" role="group">
+  
+        <div class="dropdown">
+          <button 
+            class="btn btn-outline-primary btn-sm dropdown-toggle" 
+            type="button" 
+            id="langDropdown" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">
+            {{ currentLanguage.toUpperCase() }}
+          </button>
+  
+          <ul class="dropdown-menu dropdown-langs" aria-labelledby="langDropdown">
+            @for (lang of langs; track lang) {
+              <li>
+                <button 
+                  class="dropdown-item" 
+                  [class.active]="isActive(lang)"
+                  (click)="switchLanguage(lang)">
+                  {{ lang.toUpperCase() }}
+                </button>
+              </li>
+            }
+          </ul>
+        </div>
+        
+      </div>
+      <button 
+        class="btn btn-success btn-sm"
+        [routerLink]="['/', currentLanguage, 'auth', 'register']">
+        {{ 'actions.register' | translate }}
+      </button>
+      <button class="btn btn-outline-secondary btn-sm"
+        [routerLink]="['/', currentLanguage, 'auth', 'login']">
+        {{ 'actions.login' | translate }}
+    </button>
+    </div>
+  </div>
+</div>
+</file>
+
+<file path="src/app/shared/components/navbar/navbar.component.ts">
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { TranslationService } from '../../../core/services/translation.service';
+
+@Component({
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [RouterLink, TranslatePipe],
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
+})
+export class Navbar {
+  private i18n = inject(TranslationService);
+  private router = inject(Router);
+
+  get currentLanguage(): string {
+    return this.i18n.currentLanguage;
+  }
+
+  get langs(): string[] {
+    return this.i18n.availableLanguages;
+  }
+
+  isActive(lang: string): boolean {
+    return this.i18n.currentLanguage === lang;
+  }
+
+  switchLanguage(lang: string): void {
+    if (lang === this.i18n.currentLanguage) return;
+
+    // 1) змінюємо мову в ngx-translate + localStorage
+    this.i18n.setLanguage(lang);
+
+    // 2) будуємо новий шлях, замінивши тільки перший сегмент (:lang)
+    const tree = this.router.parseUrl(this.router.url);
+    const primary = tree.root.children['primary'];
+    const segments = primary?.segments.map(s => s.path) ?? [];
+
+    if (segments.length === 0) {
+      // на всяк випадок, якщо ми без сегментів — просто /:lang
+      this.router.navigate(['/', lang], {
+        queryParamsHandling: 'preserve',
+        preserveFragment: true
+      });
+      return;
+    }
+
+    segments[0] = lang; // заміна поточної мови на обрану
+    this.router.navigate(['/', ...segments], {
+      queryParamsHandling: 'preserve',
+      preserveFragment: true
+    });
+  }
+}
+</file>
+
+<file path="src/index.html">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Frontend</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+</file>
+
+<file path="src/main.ts">
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { App } from './app/app';
+
+bootstrapApplication(App, appConfig)
+  .catch((err) => console.error(err));
+</file>
+
+<file path="src/styles.css">
+/* You can add global styles to this file, and also import other style files */
+</file>
+
+<file path="tsconfig.app.json">
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts"
+  ]
+}
+</file>
+
+<file path="tsconfig.json">
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "typeCheckHostBindings": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}
+</file>
+
+<file path="tsconfig.spec.json">
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jasmine"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}
+</file>
+
+<file path="proxy.conf.json">
+{
+  "/api": {
+    "target": "https://localhost:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
+</file>
+
+<file path="public/config.json">
+{
+  "API": "/api/v1"
+}
+</file>
+
+<file path="public/i18n/de.json">
+{
+  "app": {
+    "brand": "Ihr Virtueller Buchhalter",
+    "badge": "So einfach wie 1–2–3"
+  },
+  "lang": {
+    "sk": "SK",
+    "en": "EN",
+    "ua": "UA",
+    "de": "DE"
+  },
+  "actions": {
+    "register": "Registrieren",
+    "login": "Anmelden"
+  },
+  "hero": {
+    "title": "Buchhaltung für jeden Unternehmer",
+    "subtitle": "Schnell. Online. Sorgenfrei."
+  },
+  "about": {
+    "title": "Über unseren Service",
+    "p1": "Vergessen Sie komplizierte Tabellen und endlosen Papierkram.",
+    "p2": "Mit unserem Online-System ist Buchhaltung einfach.",
+    "p3": "Alles an einem Ort, 24/7 verfügbar.",
+    "p4": "Ihre Daten sind bei uns sicher."
+  },
+  "features": {
+    "title": "Warum uns wählen?",
+    "f1": "Einfache und intuitive Benutzeroberfläche",
+    "f2": "Automatisierte Steuerberechnung",
+    "f3": "Sichere Datenspeicherung",
+    "f4": "Schneller Support",
+    "f5": "Angepasst für die Slowakei und Tschechien"
+  },
+  "footer": {
+    "secure": "Ihre Daten sind geschützt",
+    "rights": "Alle Rechte vorbehalten"
+  },
+  "register": {
+    "title": "Registrierung",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "phone": "Telefon",
+    "password": "Passwort",
+    "submit": "Registrieren",
+    "otpTitle": "Registrierungsbestätigung",
+    "otpInstruction": "Zur Bestätigung der Registrierung geben Sie bitte den Code ein, der an Ihr Telefon gesendet wurde.",
+    "otpPlaceholder": "Code eingeben",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "error": "Fehler bei der Registrierung",
+    "success": "Ihre Nummer wurde bestätigt! Ihr Konto wurde erstellt.",
+    "invalidCode": "Ungültiger Bestätigungscode!"
+  },
+  "login": {
+    "title": "Anmelden",
+    "phone": "Telefon",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "error": "Ungültige Telefonnummer oder Passwort!"
+  }
+}
+</file>
+
+<file path="public/i18n/en.json">
+{
+  "app": {
+    "brand": "Your Virtual Accountant",
+    "badge": "As easy as 1–2–3"
+  },
+  "lang": {
+    "sk": "SK",
+    "en": "EN",
+    "ua": "UA",
+    "de": "DE"
+  },
+  "actions": {
+    "register": "Register",
+    "login": "Log in"
+  },
+  "hero": {
+    "title": "Accounting for every entrepreneur",
+    "subtitle": "Fast. Online. Hassle-free."
+  },
+  "about": {
+    "title": "About our service",
+    "p1": "Forget about complex spreadsheets and endless paperwork.",
+    "p2": "With our online system, accounting is simple.",
+    "p3": "Everything in one place, available 24/7.",
+    "p4": "Your data is safe with us."
+  },
+  "features": {
+    "title": "Why choose us?",
+    "f1": "Simple and intuitive interface",
+    "f2": "Automated tax calculations",
+    "f3": "Secure data storage",
+    "f4": "Fast support",
+    "f5": "Tailored for Slovakia and Czechia"
+  },
+  "footer": {
+    "secure": "Your data is secure",
+    "rights": "All rights reserved"
+  },
+  "register": {
+    "title": "Register",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone",
+    "password": "Password",
+    "submit": "Sign up",
+    "otpTitle": "Registration confirmation",
+    "otpInstruction": "To confirm your registration, please enter the code sent to your phone.",
+    "otpPlaceholder": "Enter code",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "error": "Registration error",
+    "success": "Your number has been verified! Your account has been created.",
+    "invalidCode": "Invalid confirmation code!"
+  },
+  "login": {
+    "title": "Log in",
+    "phone": "Phone",
+    "password": "Password",
+    "submit": "Log in",
+    "error": "Invalid phone or password!"
+  }
+}
+</file>
+
+<file path="public/i18n/sk.json">
+{
+  "app": {
+    "brand": "Váš Virtuálny Účtovník",
+    "badge": "Jednoduché ako 1–2–3"
+  },
+  "lang": {
+    "sk": "SK",
+    "en": "EN",
+    "ua": "UA",
+    "de": "DE"
+  },
+  "actions": {
+    "register": "Registrácia",
+    "login": "Prihlásenie"
+  },
+  "hero": {
+    "title": "Účtovníctvo pre každého podnikateľa",
+    "subtitle": "Rýchlo. Online. Bez starostí."
+  },
+  "about": {
+    "title": "O našej službe",
+    "p1": "Zabudnite na zložité tabuľky a nekonečné papiere.",
+    "p2": "S naším online systémom spravujete účtovníctvo jednoducho.",
+    "p3": "Všetko máte na jednom mieste, dostupné 24/7.",
+    "p4": "Vaše dáta sú u nás v bezpečí."
+  },
+  "features": {
+    "title": "Prečo si vybrať nás?",
+    "f1": "Jednoduché a intuitívne rozhranie",
+    "f2": "Automatizované daňové výpočty",
+    "f3": "Bezpečné uloženie dát",
+    "f4": "Rýchla podpora",
+    "f5": "Prispôsobené pre Slovensko a Česko"
+  },
+  "footer": {
+    "secure": "Vaše údaje sú zabezpečené",
+    "rights": "Všetky práva vyhradené"
+  },
+  "register": {
+    "title": "Registrácia",
+    "firstName": "Meno",
+    "lastName": "Priezvisko",
+    "phone": "Telefón",
+    "password": "Heslo",
+    "submit": "Zaregistrovať sa",
+    "otpTitle": "Potvrdenie registrácie",
+    "otpInstruction": "Na potvrdenie registrácie zadajte kód, ktorý vám bol zaslaný na telefón.",
+    "otpPlaceholder": "Zadajte kód",
+    "cancel": "Zrušiť",
+    "confirm": "Potvrdiť",
+    "error": "Chyba pri registrácii",
+    "success": "Vaše číslo bolo potvrdené! Váš účet bol vytvorený.",
+    "invalidCode": "Nesprávny potvrdzovací kód!"
+  },
+  "login": {
+    "title": "Prihlásenie",
+    "phone": "Telefón",
+    "password": "Heslo",
+    "submit": "Prihlásiť sa",
+    "error": "Nesprávny telefón alebo heslo!"
+  }
+}
+</file>
+
+<file path="public/i18n/uk.json">
+{
+  "app": {
+    "brand": "Ваш Віртуальний Бухгалтер",
+    "badge": "Просто як 1–2–3"
+  },
+  "lang": {
+    "sk": "SK",
+    "en": "EN",
+    "ua": "UA",
+    "de": "DE"
+  },
+  "actions": {
+    "register": "Реєстрація",
+    "login": "Вхід"
+  },
+  "hero": {
+    "title": "Бухгалтерія для кожного підприємця",
+    "subtitle": "Швидко. Онлайн. Без клопоту."
+  },
+  "about": {
+    "title": "Про наш сервіс",
+    "p1": "Забудьте про складні таблиці й нескінченні папери.",
+    "p2": "З нашою онлайн-системою бухгалтерія — це просто.",
+    "p3": "Усе в одному місці, доступне 24/7.",
+    "p4": "Ваші дані в безпеці."
+  },
+  "features": {
+    "title": "Чому обирають нас?",
+    "f1": "Простий та інтуїтивний інтерфейс",
+    "f2": "Автоматичний розрахунок податків",
+    "f3": "Безпечне збереження даних",
+    "f4": "Швидка підтримка",
+    "f5": "Адаптовано для Словаччини та Чехії"
+  },
+  "footer": {
+    "secure": "Ваші дані захищені",
+    "rights": "Всі права захищено"
+  },
+  "register": {
+    "title": "Реєстрація",
+    "firstName": "Ім’я",
+    "lastName": "Прізвище",
+    "phone": "Телефон",
+    "password": "Пароль",
+    "submit": "Зареєструватися",
+    "otpTitle": "Підтвердження реєстрації",
+    "otpInstruction": "Для підтвердження реєстрації введіть код, який надійшов на ваш телефон.",
+    "otpPlaceholder": "Введіть код",
+    "cancel": "Скасувати",
+    "confirm": "Підтвердити",
+    "error": "Помилка реєстрації",
+    "success": "Ваш номер підтверджено! Ваш акаунт створено.",
+    "invalidCode": "Невірний код підтвердження!"
+  },
+  "login": {
+    "title": "Вхід",
+    "phone": "Телефон",
+    "password": "Пароль",
+    "submit": "Увійти",
+    "error": "Невірний телефон або пароль!"
+  }
+
+}
+</file>
+
+<file path="src/app/pages/auth/login/login.component.html">
+<div class="container mt-5">
+  <div class="border p-4 rounded shadow-sm bg-white">
+    <h2 class="mb-4 text-center">{{ 'login.title' | translate }}</h2>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="phone" class="form-label">{{ 'login.phone' | translate }}</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          [(ngModel)]="user.phone"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">{{ 'login.password' | translate }}</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="user.password"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">
+        {{ 'login.submit' | translate }}
+      </button>
+    </form>
+  </div>
+</div>
+</file>
+
+<file path="src/app/pages/auth/login/login.component.ts">
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
+import { TranslationService } from '../../../core/services/translation.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+
+@Component({
+  selector: 'app-login',
+  standalone: true,
+  imports: [FormsModule, TranslatePipe],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  private i18n = inject(TranslationService);
+  private translate = inject(TranslateService);
+
+  user = {
+    phone: '',
+    password: ''
+  };
+
+  constructor(private auth: AuthService, private router: Router) {}
+
+  onSubmit() {
+    this.auth.login(this.user).subscribe({
+      next: (res) => {
+        // TODO: зберегти токен (localStorage/service)
+        this.router.navigate([`${this.i18n.currentLanguage}/dashboard`]);
+      },
+      error: () => {
+        alert(this.translate.instant('login.error'));
+      }
+    });
+  }
+}
+</file>
+
+<file path="src/app/pages/auth/register/register.component.html">
+<div class="container mt-5">
+
+  <!-- ======= СТАН 1: Форма реєстрації ======= -->
+  @if (step === 'form') {
+    <div class="border p-4 rounded shadow-sm bg-white">
+      <h2 class="mb-4 text-center">{{ 'register.title' | translate }}</h2>
+
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">{{ 'register.firstName' | translate }}</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            [(ngModel)]="user.firstName"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="lastName" class="form-label">{{ 'register.lastName' | translate }}</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            [(ngModel)]="user.lastName"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">{{ 'register.phone' | translate }}</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            [(ngModel)]="user.phone"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">{{ 'register.password' | translate }}</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">
+          {{ 'register.submit' | translate }}
+        </button>
+      </form>
+    </div>
+  }
+
+  <!-- ======= СТАН 2: Модалка OTP ======= -->
+  @if (step === 'otp') {
+    <div class="modal d-block" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow">
+          <div class="modal-header">
+            <h5 class="modal-title">{{ 'register.otpTitle' | translate }}</h5>
+            <button type="button" class="btn-close" (click)="onCancelOtp()"></button>
+          </div>
+          <div class="modal-body">
+            <p>{{ 'register.otpInstruction' | translate }}</p>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="enteredCode"
+              [placeholder]="'register.otpPlaceholder' | translate"
+            />
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="onCancelOtp()">
+              {{ 'register.cancel' | translate }}
+            </button>
+            <button class="btn btn-primary" (click)="onVerifyOtp()">
+              {{ 'register.confirm' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- ======= TOAST-повідомлення ======= -->
+  @if (showToast) {
+    <div
+      class="toast align-items-center text-bg-primary border-0 show position-fixed bottom-0 end-0 m-3"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="d-flex">
+        <div class="toast-body">
+          {{ toastMessage }}
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          (click)="showToast = false"
+        ></button>
+      </div>
+    </div>
+  }
+</div>
+</file>
+
+<file path="src/app/pages/auth/register/register.component.ts">
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
+import { TranslationService } from '../../../core/services/translation.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+@Component({
+  selector: 'app-register',
+  imports: [FormsModule, TranslatePipe],
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
+})
+export class Register {
+  private i18n = inject(TranslationService);
+  private translate = inject(TranslateService);
+
+  step: 'form' | 'otp' = 'form';
+
+  user = {
+    firstName: '',
+    lastName: '',
+    phone: '',
+    password: ''
+  };
+
+  enteredCode: string = '';
+
+  toastMessage: string | null = null;   // повідомлення для тосту
+  showToast = false;                    // прапорець показати/сховати
+
+  constructor(private auth: AuthService, private router: Router) {}
+
+  onSubmit() {
+    this.auth.register(this.user).subscribe({
+      next: () => {
+        this.step = 'otp';
+      },
+      error: (err) => {
+        console.error(err);
+        this.showToastMessage(this.translate.instant('register.error'));
+      }
+    });
+  }
+
+  onVerifyOtp() {
+    this.auth.verifyOtp({ phone: this.user.phone, code: this.enteredCode }).subscribe({
+      next: () => {
+        this.showToastMessage(this.translate.instant('register.success'));
+        setTimeout(() => this.router.navigate([`${this.i18n.currentLanguage}/auth/login`]), 1500);
+      },
+      error: (err) => {
+        console.error(err);
+        this.showToastMessage(this.translate.instant('register.invalidCode'));
+      }
+    });
+  }
+
+  onCancelOtp() {
+    this.step = 'form';
+    this.enteredCode = '';
+  }
+
+  // 👇 функція для показу Bootstrap-toast
+  private showToastMessage(message: string) {
+    this.toastMessage = message;
+    this.showToast = true;
+    setTimeout(() => {
+      this.showToast = false;
+      this.toastMessage = null;
+    }, 5000); // автоматично зникає через 5 сек
+  }
+}
+</file>
+
+<file path="src/app/pages/landing-page/landing-page.css">
+body {
+  background: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.feature-box {
+  transition: transform 0.2s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+}
+
+.lang-switcher .btn {
+  min-width: 50px;
+}
+
+footer {
+  margin-top: 50px;
+  color: #6c757d;
+}
+
+.service-card {
+  max-width: 900px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.lang-switcher .btn.active {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.dropdown-langs {
+  width: 50px;
+  min-width: 0;
+  text-align: center;
+}
+
+.dropdown-langs .dropdown-item {
+  font-size: 0.9rem; 
+  padding: 0.25rem 0.5rem; 
+  text-align: center;
+}
+</file>
+
+<file path="package.json">
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^20.2.0",
+    "@angular/compiler": "^20.2.0",
+    "@angular/core": "^20.2.0",
+    "@angular/forms": "^20.2.0",
+    "@angular/platform-browser": "^20.2.0",
+    "@angular/router": "^20.2.0",
+    "@ngx-translate/core": "^17.0.0",
+    "@ngx-translate/http-loader": "^17.0.0",
+    "bootstrap": "^5.3.8",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.2.1",
+    "@angular/cli": "^20.2.1",
+    "@angular/compiler-cli": "^20.2.0",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.9.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.9.2"
+  }
+}
+</file>
+
+<file path="src/app/app.config.ts">
+import { ApplicationConfig, 
+        provideBrowserGlobalErrorListeners, 
+        provideZoneChangeDetection,
+        provideAppInitializer,
+        inject } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
+import { ConfigService } from './core/services/config.service';
+import { provideHttpClient } from '@angular/common/http';
+import { provideTranslateService, provideTranslateLoader } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideHttpClient(),
+
+    provideAppInitializer(() => inject(ConfigService).loadConfig()),
+
+    provideTranslateService({
+      loader: provideTranslateHttpLoader({
+        prefix: '/i18n/',
+        suffix: '.json'
+      }),
+      fallbackLang: 'en',
+      lang: 'sk'
+    })
+  ]
+};
+</file>
+
+<file path="src/app/app.html">
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+</file>
+
+<file path="src/app/pages/landing-page/landing-page.ts">
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { TranslationService } from '../../core/services/translation.service';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-landing-page',
+  standalone: true,
+  imports: [RouterLink, TranslatePipe, CommonModule],
+  templateUrl: './landing-page.html',
+  styleUrl: './landing-page.css',
+})
+export class LandingPage {
+  private i18n = inject(TranslationService);
+
+  get currentLanguage(): string {
+    return this.i18n.currentLanguage;
+  }
+
+  get langs(): string[] {
+    return this.i18n.availableLanguages;
+  }
+
+  setLang(lang: string) {
+    this.i18n.setLanguage(lang);
+  }
+
+  isActive(lang: string): boolean {
+    return this.i18n.currentLanguage === lang;
+  }
+
+}
+</file>
+
+<file path="angular.json">
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "frontend": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": { "buildTarget": "frontend:build:production" },
+            "development": { "buildTarget": "frontend:build:development" }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+</file>
+
+<file path="src/app/app.routes.ts">
+import { Routes } from '@angular/router';
+import { LandingPage } from './pages/landing-page/landing-page';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
+export const routes: Routes = [
+  {
+    path: ':lang',
+    children: [
+      { path: '', component: LandingPage },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('./pages/auth/auth.routes').then((m) => m.AUTH_ROUTES)
+      },
+      { path: 'dashboard', component: DashboardComponent }
+    ]
+  }
+];
+</file>
+
+<file path="src/app/app.ts">
+import { Component, inject, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { LanguageRouteService } from './core/services/language-route.service';
+import { StartupRedirectService } from './core/services/startup-redirect.service';
+import { Navbar } from './shared/components/navbar/navbar.component';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, Navbar],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected readonly title = signal('frontend');
+
+  private _langRoute = inject(LanguageRouteService);
+  private _startupRedirect = inject(StartupRedirectService);
+}
+</file>
+
+<file path="src/app/pages/landing-page/landing-page.html">
+<div class="container py-5">
+
+  <!-- TOP: Logo + Badge + Language Switch -->
+
+  <!-- HERO SECTION -->
+  <section class="text-center mb-5">
+    <h1 class="display-5 fw-bold">{{ 'hero.title' | translate }}</h1>
+    <p class="lead text-muted">
+      {{ 'hero.subtitle' | translate }}
+    </p>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="service-card shadow-sm bg-white rounded p-4 p-md-5 mb-5 mx-auto text-center">
+    <h2 class="h4 fw-bold mb-4">{{ 'about.title' | translate }}</h2>
+
+    <p class="mb-3">{{ 'about.p1' | translate }}</p>
+    <p class="mb-3">{{ 'about.p2' | translate }}</p>
+    <p class="mb-3">{{ 'about.p3' | translate }}</p>
+    <p class="mb-0">{{ 'about.p4' | translate }}</p>
+  </section>
+
+
+  <!-- FEATURES SECTION -->
+  <section class="text-center mb-5 px-md-5">
+    <h2 class="h4 fw-semibold mb-4">{{ 'features.title' | translate }}</h2>
+    <div class="row justify-content-center g-3">
+      @for (key of ['f1','f2','f3','f4','f5']; track key) {
+        <div class="col-md-4">
+        <div class="feature-box p-3 border rounded shadow-sm h-100">
+          <div class="text-success fs-4 mb-2">✔</div>
+          <p class="m-0">{{ ('features.' + key) | translate }}</p>
+        </div>
+      </div>
+      }      
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-muted small">
+    <div>🔒 {{ 'footer.secure' | translate }}</div>
+    <div class="mt-1">© 2025 {{ 'footer.rights' | translate }}</div>
+  </footer>
+</div>
+</file>
+
+</files>

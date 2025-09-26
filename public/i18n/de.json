@@ -58,5 +58,19 @@
     "password": "Passwort",
     "submit": "Anmelden",
     "error": "Ungültige Telefonnummer oder Passwort!"
+  },
+  "navbar": {
+    "logout": "Abmelden",
+    "dashboard": "Mein Dashboard"
+  },
+  "dashboard": {
+    "welcome": "Willkommen, {{firstName}} {{lastName}}, in deinem Dashboard!",
+    "userData": "Deine Daten",
+    "phone": "Telefon",
+    "status": "Status",
+    "verified": "Verifiziert",
+    "yes": "Ja",
+    "no": "Nein",
+    "roles": "Rollen"
   }
 }

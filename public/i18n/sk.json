@@ -58,5 +58,19 @@
     "password": "Heslo",
     "submit": "Prihlásiť sa",
     "error": "Nesprávny telefón alebo heslo!"
+  },
+  "navbar": {
+    "logout": "Odhlásiť sa",
+    "dashboard": "Môj kabinet"
+  },
+  "dashboard": {
+    "welcome": "Rádi ťa vítame, {{firstName}} {{lastName}}, v tvojom kabinete!",
+    "userData": "Tvoje údaje",
+    "phone": "Telefón",
+    "status": "Stav",
+    "verified": "Overený",
+    "yes": "Áno",
+    "no": "Nie",
+    "roles": "Roly"
   }
 }

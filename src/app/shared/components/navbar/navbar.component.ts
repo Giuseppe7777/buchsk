@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslationService } from '../../../core/services/translation.service';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ import { TranslationService } from '../../../core/services/translation.service';
 export class Navbar {
   private i18n = inject(TranslationService);
   private router = inject(Router);
+  private auth = inject(AuthService);
 
   get currentLanguage(): string {
     return this.i18n.currentLanguage;
@@ -52,5 +54,15 @@ export class Navbar {
       queryParamsHandling: 'preserve',
       preserveFragment: true
     });
+  }
+
+  isLoggedIn(): boolean {
+    return this.auth.isLoggedIn();
+  }
+
+  logout(): void {
+    this.auth.logout();
+    const lang = this.router.url.split('/')[1] || 'sk';
+    this.router.navigate([`/${lang}/auth/login`]);
   }
 }

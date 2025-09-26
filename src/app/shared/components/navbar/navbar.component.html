@@ -14,6 +14,15 @@
   
     <!-- Language Switcher + Auth Buttons -->
     <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-md-0">
+      @if (isLoggedIn()) {
+        <a
+          class="btn btn-outline-primary btn-sm me-5"
+          [routerLink]="['/', currentLanguage, 'dashboard']"
+        >
+          {{ 'navbar.dashboard' | translate }}
+        </a>
+      }
+
       <div class="btn-group lang-switcher me-2" role="group">
   
         <div class="dropdown">
@@ -41,15 +50,23 @@
         </div>
         
       </div>
-      <button 
-        class="btn btn-success btn-sm"
-        [routerLink]="['/', currentLanguage, 'auth', 'register']">
-        {{ 'actions.register' | translate }}
-      </button>
-      <button class="btn btn-outline-secondary btn-sm"
-        [routerLink]="['/', currentLanguage, 'auth', 'login']">
-        {{ 'actions.login' | translate }}
-    </button>
+      @if (!isLoggedIn()) {
+        <button 
+          class="btn btn-success btn-sm"
+          [routerLink]="['/', currentLanguage, 'auth', 'register']">
+          {{ 'actions.register' | translate }}
+        </button>
+        <button 
+          class="btn btn-outline-secondary btn-sm"
+          [routerLink]="['/', currentLanguage, 'auth', 'login']">
+          {{ 'actions.login' | translate }}
+        </button>
+      }
+      @if (isLoggedIn()) {
+        <button class="btn btn-outline-danger btn-sm ms-2" (click)="logout()">
+          {{ 'navbar.logout' | translate }}
+        </button>
+      }
     </div>
   </div>
 </div>
